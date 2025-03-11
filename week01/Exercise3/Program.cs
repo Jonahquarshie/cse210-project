@@ -3,6 +3,7 @@ using System;
 class Program
 {
     static void Main(string[] args)
+    //magic game 
     {
         Console.WriteLine("Hello World! This is the Exercise3 Project.");
          Random randomGenerator = new Random();
