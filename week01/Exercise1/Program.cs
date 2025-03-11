@@ -2,7 +2,7 @@ using System;
 using System.Collections.Immutable;
 
 class Program
-// first project completed.
+// first project complete.
 {
     static void Main(string[] args)
     {
