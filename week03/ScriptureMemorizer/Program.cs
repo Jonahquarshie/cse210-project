@@ -1,41 +1,97 @@
-using System; 
-//Third week assignment
-public class Fraction
+//sing System;
+//using System.Collections.Generic;
+//using System.Linq;
+
+class Program
 {
-    private int _top;
-    private int _bottom;
+static void Main()
+{
 
-    public Fraction()
-    {
-        // Default to 1/1
-        _top = 1;
-        _bottom = 1;
-    }
+Scripture scripture = new Scripture("John 3:16", "For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life.");
 
-    public Fraction(int wholeNumber)
-    {
-        _top = wholeNumber;
-        _bottom = 1;
-    }
 
-    public Fraction(int top, int bottom)
-    {
-        _top = top;
-        _bottom = bottom;
-    }
+Console.Clear();
+ 
+scripture.DisplayScripture();
 
-    public string GetFractionString()
-    {
-        // Notice that this is not stored as a member variable.
-        // Is is just a temporary, local variable that will be recomputed each time this is called.
-        string text = $"{_top}/{_bottom}";
-        return text;
-    }
 
-    public double GetDecimalValue()
-    {
-        // Notice that this is not stored as a member variable.
-        // Is will be recomputed each time this is called.
-        return (double)_top / (double)_bottom;
-    }
+while (true)
+{
+Console.WriteLine("Press enter to hide a word or type quit to exit:");
+string userInput = Console.ReadLine();
+
+
+if (userInput.ToLower() == "quit")
+{
+break;
+}
+else
+{
+
+Console.Clear();
+scripture.HideWord();
+scripture.DisplayScripture();
+
+
+if (scripture.AllWordsHidden())
+{
+Console.WriteLine("Congratulations, you have memorized the scripture!");
+break;
+}
+}
+}
+}
+}
+
+class Scripture
+{
+private string reference;
+private string text;
+private List<string> hiddenWords;
+
+public Scripture(string reference, string text)
+{
+this.reference = reference;
+this.text = text;
+this.hiddenWords = new List<string>();
+}
+
+public void DisplayScripture()
+{
+
+Console.WriteLine(reference);
+string[] words = text.Split(' ');
+foreach (string word in words)
+{
+
+if (hiddenWords.Contains(word))
+{
+Console.Write("_____ ");
+}
+else
+{
+Console.Write(word + " ");
+}
+}
+Console.WriteLine();
+}
+
+public void HideWord()
+{
+
+string[] words = text.Split(' ');
+Random rand = new Random();
+int index = rand.Next(words.Length);
+string wordToHide = words[index];
+
+
+hiddenWords.Add(wordToHide);
+}
+
+public bool AllWordsHidden()
+{
+
+string[] words = text.Split(' ');
+return hiddenWords.Count == words.Length;
+}
 }
