@@ -5,7 +5,7 @@ using System.IO;
 
 public class Video
 {
-    // Properties
+    // Properties for stters and getters
     public string FilePath { get; set; }
     public string FileName => Path.GetFileName(FilePath);
     public long FileSize => new FileInfo(FilePath).Length;
