@@ -1,48 +1,39 @@
 using System;
 
-using System;
-using System.IO;
-
-public class Video
+public class Video 
 {
-    // Properties for stters and getters
-    public string FilePath { get; set; }
-    public string FileName => Path.GetFileName(FilePath);
-    public long FileSize => new FileInfo(FilePath).Length;
+    private string _title;
+    private string _author;
+    private double _length;
+    private List<Comment> _comments = new List<Comment>();
 
-    // Constructor
-    public Video(string filePath)
+    public Video(string title, string author, double length)
     {
-        if (File.Exists(filePath))
-        {
-            FilePath = filePath;
-        }
-        else
-        {
-            throw new FileNotFoundException("The specified video file does not exist.");
-        }
+        _title = title;
+        _author = author;
+        _length = length;
     }
-
-    // Methods
-    public void Load()
+    public void ListComment(Comment
+    
+     comment)
     {
-        // Logic to load the video file
-        Console.WriteLine($"Loading video from {FilePath}");
+        _comments.Add(comment);
     }
-
-    public void Save(string destinationPath)
+    public int CountComments()
     {
-        // Logic to save the video file
-        File.Copy(FilePath, destinationPath);
-        Console.WriteLine($"Video saved to {destinationPath}");
+        int count = 0;
+        count = _comments.Count;
+        return count;
     }
-
     public void DisplayInfo()
     {
-        // Display video information
-        Console.WriteLine($"Video File: {FileName}");
-        Console.WriteLine($"File Size: {FileSize} bytes");
+        Console.WriteLine($"Title: {_title} | Author: {_author} | Length: {_length} seconds");
+        Console.WriteLine();
+        int commentCount = CountComments();
+        Console.WriteLine($"Number of comments: {commentCount}");
+        foreach (Comment comment in _comments)
+        {
+            comment.DisplayInfo();
+        }    
     }
-
-    // Additional methods for processing video can be added here
 }
