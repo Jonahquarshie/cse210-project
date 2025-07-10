@@ -15,7 +15,7 @@ class Program
     
     //add the number to the list if it is not 0
     
-    if (userNumber != 0)
+    if (userNumber !=0)
      { 
     numbers.Add(userNumber);
      } 
