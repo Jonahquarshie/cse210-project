@@ -10,21 +10,21 @@ class Program
         int percent = int.Parse(answer);
         
         string letter = "A";
-        if (percent >= 90)
+        if (percent >= 100)
         
         
         {
            letter = "A";
         }
-        else if (percent >= 80)
+        else if (percent >= 95)
         {
             letter = "B";
         }
-        else if (percent >= 70)
+        else if (percent >= 80)
         {
             letter = "C";
         }
-        else if (percent>=60)
+        else if (percent>=55)
         {
             letter = "D";
         }
@@ -34,7 +34,7 @@ class Program
         }
         Console.WriteLine($"Your grade is: {letter}");
         
-        if (percent >= 70)
+        if (percent >= 80)
         {
             Console.WriteLine("You passed!");
         }
