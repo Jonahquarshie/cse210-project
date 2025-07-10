@@ -13,7 +13,7 @@ class Program
             string userResponse = Console.ReadLine();
             userNumber = int.Parse(userResponse);
     
-    //add the number to the list if it is not 0
+    //add the number to the list if it is not 0 and run
     
     if (userNumber !=0)
      { 
