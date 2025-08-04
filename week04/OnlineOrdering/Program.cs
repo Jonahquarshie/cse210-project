@@ -49,7 +49,7 @@ class Program
 
         foreach (Video video in videosList)
         {
-            video.DisplayInfo();
+         video.DisplayInfo();
             Console.WriteLine();
             Console.WriteLine();
         }
