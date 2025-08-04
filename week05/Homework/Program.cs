@@ -14,7 +14,7 @@ class Program
         Console.WriteLine(a2.GetHomeworkList());
 
           WritingAssignment a3 = new WritingAssignment("Jonah Quarshie", "European History", "The Causes of World War II");
-         Console.WriteLine(a3.GetSummary());
-         Console.WriteLine(a3.GetWritingInformation());
+          Console.WriteLine(a3.GetSummary());
+          Console.WriteLine(a3.GetWritingInformation());
     }
 }
