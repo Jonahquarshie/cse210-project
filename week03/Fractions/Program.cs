@@ -1,39 +1,47 @@
-using System; 
+using System;
 
-public class Fraction
+public class Fract
 {
     private int _top;
     private int _bottom;
 
-    public Fraction()
+    public Fract()
     {
         // Default to 1/1
         _top = 1;
         _bottom = 1;
     }
 
-    public Fraction(int wholeNumber)
+    public Fract(int wholeNumber)
     {
         _top = wholeNumber;
-        _bottom = 1;
+        _bottom = 1; 
     }
 
-    public Fraction(int top, int bottom)
+    public Fract(int top, int bottom)
     {
         _top = top;
         _bottom = bottom;
     }
 
-    public string GetFractionString()
+    public void Display()
     {
-        // Notice that this is not stored as a member variable.
-        // Is is just a temporary, local variable that will be recomputed each time this is called.
-        string text = $"{_top}/{_bottom}";
-        return text;
+        Console.WriteLine($"{_top}/{_bottom}");
     }
-    public double GetDecimalValue()
+}
+
+class Program
 {
-        // Notice that this is not stored as a member variable.
-        // Is will be recomputed each time this is called.
-        return (double)_top / (double)_bottom
-        
+    static void Main(string[] args)
+    {
+        // Example usage of the Fraction class
+        Fract fract1 = new Fract();
+        fract1.Display();
+
+        Fract fract2 = new Fract(5);
+        fract2.Display();
+
+        Fract fract3 = new Fract(3, 4);
+          fract3.Display();
+    }
+}
