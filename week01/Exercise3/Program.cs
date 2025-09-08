@@ -4,8 +4,9 @@ class Program
 {
     static void Main(string[] args)
     //magic game 
+    //week 1 p2.
     {
-        Console.WriteLine("Hello World! This is the Exercise3 Project.");
+        Console.WriteLine("Hello World! This is Jonah .");
          Random randomGenerator = new Random();
         int magicNumber = randomGenerator.Next(1, 100);
 
