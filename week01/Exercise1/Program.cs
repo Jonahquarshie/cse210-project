@@ -2,7 +2,7 @@ using System;
 using System.Collections.Immutable;
 
 class Program
-// week 1 project.
+// week 1 p1.
 {
     static void Main(string[] args)
     {
@@ -12,6 +12,6 @@ class Program
         Console.Write("what is your last name? ");
          string last = Console.ReadLine();
          
-         Console.WriteLine($"your name is {last}, {first},{last}");
+         Console.WriteLine($"your name is {last}, {first} ");
     }
-}
+}  
