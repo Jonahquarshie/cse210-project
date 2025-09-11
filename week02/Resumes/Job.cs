@@ -24,10 +24,10 @@ class Program
         // Create some Job objects
         Job job1 = new Job
         {
-            _jobTitle = "Software Developer",
-            _company = "Tech Corp",
-            _startYear = 2020,
-            _endYear = 2023
+            _jobTitle = "Robotics Instructor",
+            _company = "PrimeRoses Montesori School",
+            _startYear = 2024,
+            _endYear = 2025
         };
 
         Job job2 = new Job
